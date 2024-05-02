@@ -1,1 +1,133 @@
+Diagnostic questions
+Your score: 70% Passing score: 75%
+Unfortunately, you need at least a 75% to pass this assessment. Not to worry though, review your answers and try again.
+check
+1.
 
+You have data that is ingested daily and frequently analyzed in the first month. Thereafter, the data is retained only for audits, which happen occasionally every few years. You need to configure cost-effective storage. What should you do?
+check
+Configure a lifecycle policy on Cloud Storage.
+
+Create a bucket on Cloud Storage with Autoclass configured.
+
+Create a bucket on Cloud Storage with object versioning configured.
+
+Configure a data retention policy on Cloud Storage.
+Correct. A lifecycle policy can be configured to automatically move the objects between different storage classes on schedules that you determine.
+check
+2.
+
+Your analysts repeatedly run the same complex queries that combine and filter through a lot of data on BigQuery. The data changes frequently. You need to reduce the effort for the analysts. What should you do?
+
+Export the frequently queried data into Cloud SQL.
+check
+Create a view of the frequently queried data.
+
+Create a dataset with the data that is frequently queried.
+
+Export the frequently queried data into a new table.
+Correct. Creating a view will rerun the complex query automatically. Meanwhile, the analysts need only reference the name of the view, which makes it easier for them.
+check
+3.
+
+You are ingesting data that is spread out over a wide range of dates into BigQuery at a fast rate. You need to partition the table to make queries performant. What should you do?
+
+Create a time-unit column-partitioned table with yearly partitioning type.
+
+Create an ingestion-time partitioned table with yearly partitioning type.
+check
+Create an ingestion-time partitioned table with daily partitioning type.
+
+Create an integer-range partitioned table.
+Correct. A daily partition type is the most suitable given the volume of the data and the range of dates.
+check
+4.
+
+You have several large tables in your transaction databases. You need to move all the data to BigQuery for the business analysts to explore and analyze the data. How should you design the schema in BigQuery?
+
+Combine all the transactional database tables into a single table using outer joins.
+
+Retain the data on BigQuery with the same schema as the source.
+check
+Redesign the schema to denormalize the data with nested and repeated data.
+
+Redesign the schema to normalize the data by removing all redundancies.
+Correct. Denormalizing the data is the recommended approach. Joining large amounts of data repeatedly during data analysis increases costs.
+close
+5.
+
+You need to choose a data storage solution to support a transactional system. Your customers are primarily based in one region. You want to reduce your administration tasks and focus engineering effort on building your business application. What should you do?
+
+Create a Cloud Storage bucket with a regional bucket.
+close
+Use Cloud Spanner.
+
+Install a database of your choice on a Compute Engine VM.
+
+Use Cloud SQL.
+Incorrect. Cloud Spanner is more suitable for a global, transactional database requirement.
+check
+6.
+
+A manager at Cymbal Retail expresses concern about unauthorized access to objects in your Cloud Storage bucket. You need to evaluate all access on all objects in the bucket. What should you do?
+
+Change the permissions on the bucket to only trusted employees.
+check
+Enable and then review the Data Access audit logs.
+
+Review the Admin Activity audit logs.
+
+Route the Admin Activity logs to a BigQuery sink and analyze the logs with SQL queries.
+Correct. Data Access audit logs have to be specifically enabled first, because they could generate a lot of logs for all reads and writes.
+check
+7.
+
+You have data stored in a Cloud Storage bucket. You are using both Identity and Access Management (IAM) and Access Control Lists (ACLs) to configure access control. Which statement describes a user's access to objects in the bucket?
+
+The user has no access if either IAM or ACLs deny a permission.
+
+The user only has access if both IAM and ACLs grant a permission.
+
+The user has no access if IAM denies the permission.
+check
+The user has access if either IAM or ACLs grant a permission.
+Correct. IAM and ACLs work in parallel. If either of the systems grants the user access permission, the user will have access.
+check
+8.
+
+Cymbal Retail has accumulated a large amount of data. Analysts and leadership are finding it difficult to understand the meaning of the data, such as BigQuery columns. Users of the data don't know who owns what. You need to improve the searchability of the data. What should you do?
+
+Add a description column corresponding to each data column.
+
+Rename BigQuery columns with more descriptive names.
+check
+Create tags for data entries in Cloud Catalog.
+
+Export the data to Cloud Storage with descriptive file names.
+Correct. Tags enable attaching metadata to data assets and entities. This can improve searchability of the data.
+close
+9.
+
+You need to store data long term and use it to create quarterly reports. What storage class should you choose?
+close
+Nearline
+
+Standard
+
+Archive
+
+Coldline
+Incorrect. Nearline storage class is the recommended option when the data is accessed less frequently, such as once a month.
+close
+10.
+
+You have large amounts of data stored on Cloud Storage and BigQuery. Some of it is processed, but some is yet unprocessed. You have a data mesh created in Dataplex. You need to make it convenient for internal users of the data to discover and use the data. What should you do?
+close
+Create a lake for Cloud Storage data and a zone for BigQuery data.
+
+Create a lake for unprocessed data and assets for processed data.
+
+Create a raw zone for the unprocessed data and a curated zone for the processed data.
+
+Create a lake for BigQuery data and a zone for Cloud Storage data.
+Incorrect. A lake represents a data domain or business unit. A lake could encompass both Cloud Storage and BigQuery data.
