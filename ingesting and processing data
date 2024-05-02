@@ -1,0 +1,156 @@
+Diagnostic questions
+Your score: 80% Passing score: 75%
+Congratulations! You passed this assessment.
+check
+1.
+
+Your data engineering team receives data in JSON format from external sources at the end of each day. You need to design the data pipeline. What should you do?
+check
+
+A .Store the data in Cloud Storage and create an extract, transform, and load (ETL) pipeline.
+
+B.Store the data in persistent disks and create an ETL pipeline.
+
+C.Create a public API to allow external applications to add the data to your warehouse.
+
+D.Make your BigQuery data warehouse public and ask the external sources to insert the data.
+
+
+Correct.A-- The recommended approach for batch data pipelines is to store data in Cloud Storage. Then, create an ETL (or ELT, depending on the use case) pipeline to move the data into a data warehouse.
+check
+
+
+2.
+
+You are running Dataflow jobs for data processing. When developers update the code in Cloud Source Repositories, you need to test and deploy the updated code with minimal effort. Which of these would you use to build your continuous integration and delivery (CI/CD) pipeline for data processing?
+
+Compute Engine
+
+Cloud Code
+check
+Cloud Build
+
+Terraform
+
+Correct. Cloud Build can be configured to watch for updates in the source repository and trigger a series of steps, as required, to implement a CI/CD pipeline.
+check
+
+
+3.
+
+The first stage of your data pipeline processes tens of terabytes of financial data and creates a sparse, time-series dataset as a key-value pair. Which of these is a suitable sink for the pipeline's first stage?
+
+AlloyDB
+
+Cloud SQL
+check
+Bigtable
+
+Cloud Storage
+
+
+Correct. Bigtable is ideal for applications that need high throughput and scalability for key/value data, where each value is typically no larger than 10 MB: Bigtable is suitable for applications that work on time-series data, such as financial applications.
+check
+
+
+4.
+
+You manage a PySpark batch data pipeline by using DataproC: You want to take a hands-off approach to running the workload, and you do not want to provision and manage your own cluster. What should you do?
+check
+Configure the job to run on Dataproc Serverless.
+
+Rewrite the job in Dataflow with SQL.
+
+Rewrite the job in Spark SQL.
+
+Configure the job to run with Spot VMs.
+Dataproc Serverless will automatically provision the resources to run your Dataproc jobs.
+check
+
+
+5.
+
+You want to build a streaming data analytics pipeline in Google Cloud. You need to choose the right products that support streaming data. Which of these would you choose?
+
+Cloud Storage, Dataflow, Cloud SQL
+
+Pub/Sub, Dataprep, BigQuery
+
+Cloud Storage, Dataprep, AlloyDB
+check
+Pub/Sub, Dataflow, BigQuery
+
+
+Correct. Pub/Sub, Dataflow, and BigQuery support streaming data and form the recommended pipeline for continuous data processing.
+close
+
+
+
+6.
+
+You are creating a data pipeline for streaming data on Dataflow for Cymbal Retail's point of sales data. You want to calculate the total sales per hour on a continuous basis. Which of these windowing options should you use?
+
+Session windows
+
+Global window
+close
+Hopping windows (sliding windows in Apache Beam)
+
+Tumbling windows (fixed windows in Apache Beam)
+
+
+Incorrect. Hopping windows (or sliding windows in Apache Beam) can overlap and are not the right option for this requirement.
+check
+
+
+7.
+
+You have a data pipeline that requires you to monitor a Cloud Storage bucket for a file, start a Dataflow job to process data in the file, run a shell script to validate the processed data in BigQuery, and then delete the original file. You need to orchestrate this pipeline by using recommended tools. Which product should you choose?
+
+Cloud Tasks
+
+Cloud Run
+
+Cloud Scheduler
+check
+Cloud Composer
+Correct. Cloud Composer, a managed version of Apache Airflow, can orchestrate a series of data pipeline tasks.
+check
+8.
+
+Your company has multiple data analysts but a limited data engineering team. You need to choose a tool where the analysts can build data pipelines themselves with a graphical user interface. Which of these products is the most appropriate?
+
+Dataproc
+check
+Cloud Data Fusion
+
+Cloud Composer
+
+Dataflow
+Correct. The Cloud Data Fusion web UI lets you build scalable data integration solutions to clean, prepare, blend, transfer, and transform data, without having to manage the infrastructure.
+close
+9.
+
+You need to run batch jobs, which could take many days to complete. You do not want to manage the infrastructure provisioning. What should you do?
+close
+Use Workflows to run the jobs.
+
+Run the jobs on Batch.
+
+Use Cloud Run to run the jobs.
+
+Use Cloud Scheduler to run the jobs.
+Incorrect. Workflows is recommended when you want to connect a series of shorter tasks.
+check
+10.
+
+You are processing large amounts of input data in BigQuery. You need to combine this data with a small amount of frequently changing data that is available in Cloud SQL. What should you do?
+
+Copy the data from Cloud SQL and create a combined, normalized table hourly.
+check
+Use a federated query to get data from Cloud SQL.
+
+Copy the data from Cloud SQL to a new BigQuery table hourly.
+
+Create a Dataflow pipeline to combine the BigQuery and Cloud SQL data when the Cloud SQL data changes.
+Correct. Because the data is frequently changing, you can query the data in-place by using federated queries from BigQuery.
