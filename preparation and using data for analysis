@@ -1,0 +1,134 @@
+Diagnostic questions
+Your score: 80% Passing score: 75%
+Congratulations! You passed this assessment.
+check
+1.
+
+You used Dataplex to create lakes and zones for your business data. However, some files are not being discovered. What could be the issue?
+
+The files are in ORC format.
+check
+You have an exclude pattern that matches the files.
+
+The files are in Parquet format.
+
+You have scheduled discovery to run every hour.
+
+Correct. An exclude pattern will skip the file and therefore, this could be the reason the data is not discovered.
+close
+2.
+
+You need to optimize the performance of queries in BigQuery. Your tables are not partitioned or clustered. What optimization technique can you use?
+
+Batch your updates and inserts.
+
+Use the LIMIT clause to reduce the data read.
+close
+Filter data as late as possible.
+
+Perform self-joins on data.
+Incorrect. Filtering data as early as possible reduces the amount of data processed across stages.
+check
+3.
+
+Your data in BigQuery has some columns that are extremely sensitive. You need to enable only some users to see certain columns. What should you do?
+
+Use Identity and Access Management (IAM) permissions.
+check
+Use policy tags.
+
+Create a new dataset with the column's data.
+
+Create a new table with the column's data.
+Correct. In BigQuery, policy tags give you fine-grained column level access control.
+check
+4.
+
+You repeatedly run the same queries by joining multiple tables. The original tables change about ten times per day. You want an optimized querying approach. Which feature should you use?
+
+Federated queries
+
+Views
+check
+Materialized views
+
+Partitions
+Correct. Materialized views will improve query performance by precomputing and periodically caching query results.
+check
+5.
+
+Your company uses Google Workspace and your leadership team is familiar with its business apps and collaboration tools. They want a cost-effective solution that uses their existing knowledge to evaluate, analyze, filter, and visualize data that is stored in BigQuery. What should you do to create a solution for the leadership team?
+check
+Configure Connected Sheets.
+
+Configure Looker Studio.
+
+Create models in Looker.
+
+Configure Tableau.
+Correct. Connected Sheets is an easy way to integrate BigQuery data with Google Sheets. Because the leadership team is familiar with Workspace and Sheets, this satisfies their requirement.
+close
+6.
+
+You have analytics data stored in BigQuery. You need an efficient way to compute values across a group of rows and return a single result for each row. What should you do?
+
+Use a window function with an OVER clause.
+close
+Use an aggregate function.
+
+Use a UDF (user-defined function).
+
+Use BigQuery ML.
+Incorrect. An aggregate function gives you one result for all the rows.
+check
+7.
+
+You have data in PostgreSQL that was designed to reduce redundancy. You are transferring this data to BigQuery for analytics. The source data is hierarchical and frequently queried together. You need to design a BigQuery schema that is performant. What should you do?
+
+Retain the data in normalized form always.
+
+Copy the normalized data into partitions.
+check
+Use nested and repeated fields.
+
+Copy the primary tables and use federated queries for secondary tables.
+Correct. Because the data is queried together, the schema design can group the data together with nested and repeated fields.
+check
+8.
+
+Your business has collected industry-relevant data over many years. The processed data is useful for your partners and they are willing to pay for its usage. You need to ensure proper access control over the data. What should you do?
+
+Export the data to persistent disks and share it through an FTP endpoint.
+check
+Host the data on Analytics Hub.
+
+Export the data to zip files and share it through Cloud Storage.
+
+Host the data on Cloud SQL.
+Correct. Analytics Hub has the built-in options to connect publishers and subscribers with access control and to monetize data access.
+check
+9.
+
+You have a complex set of data that comes from multiple sources. The analysts in your team need to analyze the data, visualize it, and publish reports to internal and external stakeholders. You need to make it easier for the analysts to work with the data by abstracting the multiple data sources. What tool do you recommend?
+
+D3.js library
+
+Looker Studio
+check
+Looker
+
+Connected Sheets
+Correct. Looker lets you model the underlying data sources and create an abstraction that analysts can easily build on.
+check
+10.
+
+You built machine learning (ML) models based on your own data. In production, the ML models are not giving satisfactory results. When you examine the data, it appears that the existing data is not sufficiently representing the business goals. You need to create a more accurate machine learning model. What should you do?
+check
+Perform feature engineering, and use domain knowledge to enhance the column data.
+
+Perform L2 regularization.
+
+Train the model with more of similar data.
+
+Train the model with the same data, but use more epochs.
+Correct. Feature engineering can pick and choose relevant data columns and also enhance a model by combining columns. For this requirement, feature engineering improves the ML model.
